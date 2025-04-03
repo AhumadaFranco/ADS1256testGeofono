@@ -47,22 +47,23 @@ Este proyecto recoge datos analógicos de varios canales utilizando el módulo A
 
 4. **Los datos recopilados se guardan en un archivo CSV** con un nombre especificado por ti o generado por el script. El archivo CSV tendrá un formato similar a este:
     ```
-    T (s), Canal 0, Canal 1, Canal 2, T.real
-    0.000001, value0_0, value0_1, value0_2, 1626884190.123456
-    0.000002, value1_0, value1_1, value1_2, 1626884190.223456
+    T (s), Canal 0 (V), Canal 1 (V), Canal 2 (V)...
+    0.000001, value0_0, value0_1, value0_2, ...
+    0.000002, value1_0, value1_1, value1_2, ...
     ...
     ```
 
 5. **Después de completar la recolección de datos**, el script mostrará el tiempo total que tomó la recolección y el número total de muestras recopiladas.
 
 ## Explicación del Script
-El script `test4.py` realiza los siguientes pasos:
+El script `test5.py` realiza los siguientes pasos:
 
-1. **Inicialización:** El script inicializa el módulo ADC ADS1256 conectado al Raspberry Pi. Luego solicita al usuario varias configuraciones, incluyendo la tasa de muestreo, los canales a medir, la duración de la medición, el nombre del archivo de salida y si desea ver los datos en tiempo real.
+1. **Inicialización:** El script inicializa el módulo ADC ADS1256 conectado al Raspberry Pi. Luego solicita al usuario varias configuraciones, incluyendo los canales a medir, la ganancia de trabajo del ADC, la tasa de muestreo y la duración de la medición.
 
 2. **Recolección de Datos:** El script recopila datos de los canales seleccionados, convirtiendo los valores crudos del ADC en valores de voltaje. Periódicamente guarda los datos recopilados en un archivo CSV, asegurando que los datos no se pierdan durante sesiones largas de medición.
 
-3. **Salida:** Los datos recopilados se guardan en un archivo CSV, que se puede analizar posteriormente. Al final de la medición, el script muestra la duración total y el número de muestras recolectadas.
+3. **Salida:** Los datos recopilados se guardan en un archivo CSV, que se puede analizar posteriormente. Además, se exporta un archivo PNG con un gráfico que evidencia la onda entregada por el geófono, indicando valores relevantes como peaks máximo, mínimo y promedio. Al final de la medición, el script muestra la duración total y el número de muestras recolectadas.
+
 ## **Cambios Realizados**
 
 
@@ -85,3 +86,4 @@ El script incluye un bloque try-except para manejar cualquier excepción que pue
 Start time (hh:mm:ss.ss): 16:53:44.637
 End time (hh:mm:ss.ss): 16:53:59.638
 Samples: 30000 @ 2000 sps in 15 sec.
+
