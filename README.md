@@ -21,12 +21,12 @@ Este proyecto recoge datos analógicos de varios canales utilizando el módulo A
     sudo pip install spidev
     ```
 
-3. **Descarga la biblioteca ADS1256** desde su [repositorio](https://github.com/AleReb/ADS1256testspeed).
+3. **Descarga la biblioteca ADS1256** desde su [repositorio](https://github.com/AhumadaFranco/ADS1256testGeofono.git).
 
 4. **Clona este repositorio** en tu Raspberry Pi:
     ```bash
-    git clone https://github.com/AleReb/ADS1256testspeed.git
-    cd ADS1256testspeed/PYtest
+    git clone https://github.com/AhumadaFranco/ADS1256testGeofono.git
+    cd ADS1256testGeofono/PYtest
     ```
 
 ## Uso
