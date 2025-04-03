@@ -41,7 +41,7 @@ Este proyecto recoge datos analógicos de varios canales utilizando el módulo A
    - **Canales a Medir:** Ingresa los canales que deseas medir (por ejemplo, 0,1,2). Si no se ingresan canales, se usarán por defecto los canales 0 a 7.
    - **Duración:** Ingresa el tiempo en segundos para la recolección de datos (por ejemplo, 60 para 60 segundos).
 
-  - **Visualización de Datos en Tiempo Real:** Puedes elegir mostrar los datos en tiempo real en la pantalla. Para no retrasar la medición, es decir, que se mantenga el total de muestras en el tiempo establecido por usuario (SPS x duración de muestreo), se visualiza en pantalla la adquisición de datos cada 100 muestras.
+  - **Visualización de Datos en Tiempo Real:** Puedes elegir mostrar los datos en tiempo real en la pantalla. Para no retrasar la medición, es decir, que se mantenga el total de muestras en el tiempo establecido por usuario (SPS x duración de muestreo), se visualiza en pantalla la adquisición de datos cada 100 muestras. Esta carencia de retraso en la recolección de datos en un tiempo establecido se da a la perfección cuando funciona un sólo canal. Por otro lado, cabe destacar que es posible que exista un cierto retraso en la toma de muestras, cuando se exije sensar 2 canales o más, debido al aumento de SPS, en dónde se cumple evidentemente la relación entre SPS y duración de muestreo.
 
 3. **El script recopilará datos** según tus configuraciones y los guardará en un archivo CSV.
 
