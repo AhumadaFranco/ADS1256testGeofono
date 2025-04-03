@@ -1,2 +1,2 @@
-# ADS1256testGeofono
-codigo de pruebas basado en este board de weaveshare https://www.waveshare.com/wiki/High-Precision_AD/DA_Board para trabajo con udd unam basado en requerimientos solicitados
+# Recolección de Datos ADC con Rapsberry Pi
+Este proyecto recoge datos analógicos de varios canales utilizando el módulo ADC ADS1256 conectado a un Raspberry Pi. Los datos recopilados se guardan en un archivo CSV para su posterior análisis. El script ofrece opciones para configurar la tasa de muestreo, los canales a medir y la duración de la recolección de datos. También proporciona un gráfico referente al comportamiento de la onda recibida por el geófono, indicando peak máximo, mínimo y promedio de datos.
