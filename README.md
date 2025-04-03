@@ -65,9 +65,6 @@ El script `test4.py` realiza los siguientes pasos:
 3. **Salida:** Los datos recopilados se guardan en un archivo CSV, que se puede analizar posteriormente. Al final de la medición, el script muestra la duración total y el número de muestras recolectadas.
 ## **Cambios Realizados**
 
-### **Modificaciones en ADS1xx.py:**
-
-- **Función `ADS1256_GetSelectedChannels`:** Se añadió una nueva función llamada `ADS1256_GetSelectedChannels` que permite leer únicamente los canales especificados en una lista. Esto mejora la eficiencia del código al evitar la lectura innecesaria de todos los canales cuando solo se necesitan algunos.
 
 ### **Modificaciones en test5.py:**
 
