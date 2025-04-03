@@ -41,8 +41,16 @@ Este proyecto recoge datos analógicos de varios canales utilizando el módulo A
    - **Canales a Medir:** Ingresa los canales que deseas medir (por ejemplo, 0,1,2). Si no se ingresan canales, se usarán por defecto los canales 0 a 7.
    - **Duración:** Ingresa el tiempo en segundos para la recolección de datos (por ejemplo, 60 para 60 segundos).
 
-  - **Visualización de Datos en Tiempo Real:** Puedes elegir mostrar los datos en tiempo real en la pantalla. Para no retrasar la medición, es decir, que se mantenga el total de muestras en el tiempo establecido por usuario (SPS x duración de muestreo), se visualiza en pantalla la adquisición de datos cada 100 muestras. Esta carencia de retraso en la recolección de datos en un tiempo establecido se da a la perfección cuando funciona un sólo canal. Por otro lado, cabe destacar que es posible que exista un cierto retraso en la toma de muestras, cuando se exije sensar 2 canales o más, debido al aumento de SPS, en dónde se cumple evidentemente la relación entre SPS y duración de muestreo.
+  - **Visualización de Datos en Tiempo Real:** Puedes elegir mostrar los datos en tiempo real en la pantalla. Para no retrasar la medición, es decir, que se mantenga el total de muestras en el tiempo establecido por usuario (SPS x duración de muestreo), se visualiza en pantalla la adquisición de datos cada 100 muestras. Esta carencia de retraso en la recolección de datos en un tiempo establecido se da a la perfección cuando funciona un sólo canal. Por otro lado, cabe destacar que es posible que exista un cierto retraso en la toma de muestras, cuando se exije sensar 2 canales o más, debido al aumento de SPS, en dónde se cumple evidentemente la relación entre SPS y duración de muestreo. Esto se puede trabajar de manera conveniente gestionando entre las líneas 50 y 54 del programa *test5.py*:
+ ```
+     if i % 100 == 0:
+        texto = f"Muestra {i} | Tiempo: {t_actual:.3f} s | " + " | ".join(
+            [f"Canal {canal}: {datos[canal][-1]:.6f} V" for canal in canales]
+        )
+        print(texto)
 
+ ```
+De esta forma se puede ir manejando la cantidad de muestras que se visualizan por pantalla, gestionando los recursos computacionales de tal forma que se enfoque en sensar la cantidad de SPS en el tiempo escogido por el usuario. Por ejemplo: Si se desea sensar 3 canales, se sugiere que se muestre por pantalla la adqusición de datos cada 500 o 1000 muestras, con el fin de disminuir el retraso.
 3. **El script recopilará datos** según tus configuraciones y los guardará en un archivo CSV.
 
 4. **Los datos recopilados se guardan en un archivo CSV** con un nombre especificado por ti o generado por el script. El archivo CSV tendrá un formato similar a este:
